@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017 LasLabs Inc.
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <menuitem id="menu_five9_root"
+              parent="connector.menu_connector_root"
+              name="Five9"
+              sequence="10"
+              groups="connector.group_connector_manager" />
+
+    <menuitem id="menu_five9_backend"
+              parent="menu_five9_root"
+              name="Backends"
+              sequence="10"
+              action="five9_backend_action" />
+
+    <menuitem id="menu_five9_call_variable"
+              parent="menu_five9_root"
+              name="Call Variables"
+              sequence="20"
+              action="five9_call_variable_action" />
+
+    <menuitem id="menu_five9_web_connector"
+              parent="menu_five9_root"
+              name="Web Connectors"
+              sequence="30"
+              action="five9_web_connector_action" />
+
+</odoo>

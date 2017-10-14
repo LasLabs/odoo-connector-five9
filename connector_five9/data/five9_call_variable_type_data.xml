@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017 LasLabs Inc.
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record id="call_variable_type_string" model="five9.call.variable.type">
+        <field name="name">STRING</field>
+    </record>
+
+    <record id="call_variable_type_email" model="five9.call.variable.type">
+        <field name="name">EMAIL</field>
+    </record>
+
+    <record id="call_variable_type_date_time" model="five9.call.variable.type">
+        <field name="name">DATE_TIME</field>
+        <field name="deserialize">fields.Datetime.to_string(
+            datetime.strptime(value[:14], '%Y%m%d%H%M%S')
+        )</field>
+    </record>
+
+    <record id="call_variable_type_date" model="five9.call.variable.type">
+        <field name="name">DATE</field>
+        <field name="deserialize">fields.Date.to_string(
+            datetime.strptime(value[:8], '%Y%m%d')
+        )</field>
+    </record>
+
+    <record id="call_variable_type_time" model="five9.call.variable.type">
+        <field name="name">TIME</field>
+    </record>
+
+    <record id="call_variable_type_number" model="five9.call.variable.type">
+        <field name="name">NUMBER</field>
+        <field name="deserialize">value and float(value) or False</field>
+    </record>
+
+    <record id="call_variable_type_phone" model="five9.call.variable.type">
+        <field name="name">PHONE</field>
+    </record>
+
+    <record id="call_variable_type_time_period" model="five9.call.variable.type">
+        <field name="name">TIME_PERIOD</field>
+    </record>
+
+    <record id="call_variable_type_time_currency" model="five9.call.variable.type">
+        <field name="name">CURRENCY</field>
+    </record>
+
+    <record id="call_variable_type_boolean" model="five9.call.variable.type">
+        <field name="name">BOOLEAN</field>
+        <field name="deserialize">bool(value)</field>
+    </record>
+
+    <record id="call_variable_type_percent" model="five9.call.variable.type">
+        <field name="name">PERCENT</field>
+    </record>
+
+    <record id="call_variable_type_url" model="five9.call.variable.type">
+        <field name="name">URL</field>
+    </record>
+
+</odoo>

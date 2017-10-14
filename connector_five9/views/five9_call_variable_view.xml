@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017 LasLabs Inc.
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record id="five9_call_variable_form" model="ir.ui.view">
+        <field name="name">five9.call.variable.form</field>
+        <field name="model">five9.call.variable</field>
+        <field name="arch" type="xml">
+            <form string="Five9 Call Variable" create="0" edit="0">
+
+                <sheet>
+
+                    <h1>
+                        <field name="name" class="oe_inline" />
+                    </h1>
+
+                    <group>
+                        <field name="description" />
+                        <field name="group_id" />
+                        <field name="type_id" />
+                        <field name="default_value" />
+                        <field name="reporting" />
+                        <field name="sensitive_data" />
+                        <field name="apply_to_all_dispositions" />
+                        <field name="disposition_ids"
+                               attrs="{'invisible': [('apply_to_all_dispositions', '=', True)]}" />
+                    </group>
+
+                </sheet>
+
+            </form>
+        </field>
+    </record>
+
+    <record id="five9_call_variable_tree" model="ir.ui.view">
+        <field name="name">five9.call.variable.tree</field>
+        <field name="model">five9.call.variable</field>
+        <field name="arch" type="xml">
+            <tree string="Five9 Call Variables" create="0">
+                <field name="name" />
+                <field name="description" />
+                <field name="group_id" />
+                <field name="type_id" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="five9_call_variable_action" model="ir.actions.act_window">
+        <field name="name">Five9 Call Variables</field>
+        <field name="res_model">five9.call.variable</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

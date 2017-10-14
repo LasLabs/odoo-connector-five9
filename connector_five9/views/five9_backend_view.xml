@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017 LasLabs Inc.
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record id="five9_backend_form" model="ir.ui.view">
+        <field name="name">five9.backend.form</field>
+        <field name="model">five9.backend</field>
+        <field name="arch" type="xml">
+            <form string="Five9 Backend">
+
+                <header>
+                    <button name="action_do_setup"
+                            type="object"
+                            string="Initialize Backend"
+                            class="oe_highlight"
+                            attrs="{'invisible': [('is_setup_complete', '!=', False)]}" />
+                    <button name="action_create_hooks"
+                            type="object"
+                            string="Update Web Hooks"
+                            attrs="{'invisible': [('is_setup_complete', '=', False)]}" />
+                    <button name="action_delete_hooks"
+                            type="object"
+                            string="Delete Web Hooks"
+                            attrs="{'invisible': [('is_setup_complete', '=', False)]}" />
+                </header>
+
+                <sheet>
+
+                    <label for="name" class="oe_edit_only" />
+                    <h1>
+                        <field name="name" class="oe_inline" />
+                    </h1>
+
+                    <group name="group_five9"
+                           string="Five9 Configuration">
+                        <group>
+                            <field name="username" />
+                            <field name="password" widget="password" />
+                        </group>
+                        <group>
+                            <field name="project_id" />
+                            <field name="company_id" />
+                            <field name="is_default_export" />
+                            <field name="is_setup_complete" invisible="1" />
+                        </group>
+                    </group>
+
+                    <notebook>
+
+                        <page name="web_hook_ids" string="Web Hooks">
+                            <group name="group_web_hooks">
+                                <field name="web_hook_ids" />
+                            </group>
+                        </page>
+
+                    </notebook>
+
+                </sheet>
+
+            </form>
+        </field>
+    </record>
+
+    <record id="five9_backend_tree" model="ir.ui.view">
+        <field name="name">five9.backend.tree</field>
+        <field name="model">five9.backend</field>
+        <field name="arch" type="xml">
+            <tree string="Five9 Backends">
+                <field name="company_id" />
+                <field name="is_default_export" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="five9_backend_action" model="ir.actions.act_window">
+        <field name="name">Five9 Backends</field>
+        <field name="res_model">five9.backend</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>
