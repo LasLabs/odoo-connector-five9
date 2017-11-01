@@ -1,12 +1,35 @@
-.. image:: https://img.shields.io/badge/licence-AGPL--3-blue.svg
-   :target: https://www.gnu.org/licenses/agpl
-   :alt: License: AGPL-3
+|License AGPL-3| | |Build Status| | |Test Coverage|
 
 ===============
 Five9 Connector
 ===============
 
-This module allows for you to synchronize Odoo and Five9.
+This module allows for you to synchronize Odoo and Five9 in the following
+capacities:
+
++---------------------+--------+--------+--------+
+| Object              | Import | Export | Delete |
++=====================+========+========+========+
+| Agent               | Yes    | No     | No     |
++---------------------+--------+--------+--------+
+| Agent Group         | Yes    | No     | No     |
++---------------------+--------+--------+--------+
+| Call                | Yes    | No     | No     |
++---------------------+--------+--------+--------+
+| Call Variable       | Yes    | No     | No     |
++---------------------+--------+--------+--------+
+| Call Variable Group | Yes    | No     | No     |
++---------------------+--------+--------+--------+
+| Campaign            | Yes    | No     | No     |
++---------------------+--------+--------+--------+
+| Contact             | Yes    | Yes    | No     |
++---------------------+--------+--------+--------+
+| Disposition         | Yes    | Yes    | No     |
++---------------------+--------+--------+--------+
+| Skill               | Yes    | No     | No     |
++---------------------+--------+--------+--------+
+| Web Connector       | Yes    | Yes    | No     |
++---------------------+--------+--------+--------+
 
 Installation
 ============
@@ -65,3 +88,12 @@ Maintainer
    :target: https://laslabs.com
 
 This module is maintained by LasLabs Inc.
+
+
+.. |Build Status| image:: https://img.shields.io/travis/LasLabs/python-five9/master.svg
+   :target: https://travis-ci.org/LasLabs/python-five9
+.. |Test Coverage| image:: https://img.shields.io/codecov/c/github/LasLabs/python-five9/master.svg
+   :target: https://codecov.io/gh/LasLabs/python-five9
+.. |License AGPL-3| image:: https://img.shields.io/badge/license-AGPL--3-blue.svg
+   :target: https://www.gnu.org/licenses/agpl
+   :alt: License: AGPL-3
