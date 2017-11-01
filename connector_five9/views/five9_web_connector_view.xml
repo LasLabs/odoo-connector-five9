@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017 LasLabs Inc.
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record id="five9_web_connector_form" model="ir.ui.view">
+        <field name="name">five9.web.connector.form</field>
+        <field name="model">five9.web.connector</field>
+        <field name="arch" type="xml">
+            <form string="Five9 Web Connector">
+
+                <header />
+
+                <sheet>
+
+                    <label for="name" class="oe_edit_only" />
+                    <h1>
+                        <field name="name" class="oe_inline" />
+                    </h1>
+
+                    <group name="group_configuration">
+                        <field name="backend_id" />
+                        <field name="description" />
+                        <field name="is_post" />
+
+                        <field name="trigger" />
+                        <field name="trigger_disposition_ids"
+                               widget="many2many_tags"
+                               attrs="{'invisible': [('trigger', '!=', 'OnCallDispositioned')]}" />
+
+                        <field name="clear_trigger_dispositions" />
+                        <field name="cti_web_services" />
+
+                        <field name="execute_in_browser" />
+                        <field name="agent_application"
+                               attrs="{'invisible': [('execute_in_browser', '!=', True)]}" />
+
+                    </group>
+
+                    <group name="group_data">
+                        <field name="constant_ids" />
+                    </group>
+
+                    <group name="group_post"
+                           attrs="{'invisible': [('is_post', '!=', True)]}">
+
+                        <field name="add_worksheet" />
+                        <field name="start_page_text" />
+                        <field name="post_constant_ids" />
+                        <field name="post_variable_ids" />
+                        <field name="variable_ids" />
+
+                    </group>
+
+                </sheet>
+
+            </form>
+        </field>
+    </record>
+
+    <record id="five9_web_connector_tree" model="ir.ui.view">
+        <field name="name">five9.web.connector.tree</field>
+        <field name="model">five9.web.connector</field>
+        <field name="arch" type="xml">
+            <tree string="Five9 Web Connectors">
+                <field name="name" />
+                <field name="uri_json" />
+                <field name="trigger" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="five9_web_connector_action" model="ir.actions.act_window">
+        <field name="name">Five9 Web Connectors</field>
+        <field name="res_model">five9.web.connector</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>
