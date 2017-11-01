@@ -90,10 +90,10 @@ Maintainer
 This module is maintained by LasLabs Inc.
 
 
-.. |Build Status| image:: https://img.shields.io/travis/LasLabs/python-five9/master.svg
-   :target: https://travis-ci.org/LasLabs/python-five9
-.. |Test Coverage| image:: https://img.shields.io/codecov/c/github/LasLabs/python-five9/master.svg
-   :target: https://codecov.io/gh/LasLabs/python-five9
+.. |Build Status| image:: https://img.shields.io/travis/LasLabs/odoo-connector-five9/master.svg
+   :target: https://travis-ci.org/LasLabs/odoo-connector-five9
+.. |Test Coverage| image:: https://img.shields.io/codecov/c/github/LasLabs/odoo-connector-five9/master.svg
+   :target: https://codecov.io/gh/LasLabs/odoo-connector-five9
 .. |License AGPL-3| image:: https://img.shields.io/badge/license-AGPL--3-blue.svg
    :target: https://www.gnu.org/licenses/agpl
    :alt: License: AGPL-3
