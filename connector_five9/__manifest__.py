@@ -22,7 +22,6 @@
         "sales_team",
         "partner_firstname",
         "project",
-        "project_task_category",
         "queue_job",
     ],
     "data": [
